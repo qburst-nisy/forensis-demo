@@ -1,0 +1,194 @@
+{
+  "intro": {
+    "title": "Browse Disciplines",
+    "description": "ForensisGroup connects you with thousands of fully vetted expert witnesses across every discipline imaginable — and some you can’t. Explore our major practice areas below."
+  },
+  "categories": [
+    {
+      "id": "business",
+      "title": "Business",
+      "description": "Commercial, financial, and employment experts for complex business disputes.",
+      "disciplines": [
+        {
+          "name": "Forensic Accounting",
+          "description": "Fraud investigation, damages analysis, and financial reconstruction for litigation."
+        },
+        {
+          "name": "Business Valuation",
+          "description": "Independent valuation opinions for mergers, shareholder disputes, and damages."
+        },
+        {
+          "name": "Economics & Finance",
+          "description": "Economic loss, market analysis, and financial modeling for commercial cases."
+        },
+        {
+          "name": "Employment & Human Resources",
+          "description": "Workplace practices, discrimination claims, and vocational assessments."
+        },
+        {
+          "name": "Insurance & Bad Faith",
+          "description": "Coverage analysis, claims handling standards, and insurance industry practices."
+        },
+        {
+          "name": "Marketing & Intellectual Property",
+          "description": "Brand, trademark, patent, and market-related expert opinions."
+        }
+      ]
+    },
+    {
+      "id": "construction-engineering",
+      "title": "Construction & Engineering",
+      "description": "Building, design, and engineering specialists for construction-related litigation.",
+      "disciplines": [
+        {
+          "name": "Architecture",
+          "description": "Design standards, architect liability, and construction document review."
+        },
+        {
+          "name": "Civil Engineering",
+          "description": "Site work, structural systems, and infrastructure-related disputes."
+        },
+        {
+          "name": "Mechanical Engineering",
+          "description": "HVAC, equipment, machinery, and mechanical system failures."
+        },
+        {
+          "name": "Construction Defects",
+          "description": "Building envelope, waterproofing, and workmanship defect analysis."
+        },
+        {
+          "name": "Failure Analysis",
+          "description": "Root-cause investigation of structural and material failures."
+        },
+        {
+          "name": "Electrical Engineering",
+          "description": "Power systems, electrical safety, and equipment-related claims."
+        }
+      ]
+    },
+    {
+      "id": "environmental",
+      "title": "Environmental",
+      "description": "Scientists and consultants for contamination, compliance, and environmental impact.",
+      "disciplines": [
+        {
+          "name": "Environmental Science",
+          "description": "Site assessment, contamination pathways, and remediation evaluation."
+        },
+        {
+          "name": "Toxicology",
+          "description": "Exposure analysis, chemical risk, and toxicological causation opinions."
+        },
+        {
+          "name": "Regulatory Compliance",
+          "description": "Environmental regulations, permitting, and industry standard of care."
+        },
+        {
+          "name": "Air & Water Quality",
+          "description": "Pollution sources, monitoring data, and environmental impact findings."
+        },
+        {
+          "name": "Hazardous Materials",
+          "description": "Handling, storage, transport, and release of hazardous substances."
+        },
+        {
+          "name": "Industrial Hygiene",
+          "description": "Workplace exposure, safety controls, and occupational health issues."
+        }
+      ]
+    },
+    {
+      "id": "science-medicine",
+      "title": "Science & Medicine",
+      "description": "Medical and scientific experts across clinical, forensic, and technical fields.",
+      "disciplines": [
+        {
+          "name": "Medical Malpractice",
+          "description": "Standard of care opinions across clinical specialties and hospital settings."
+        },
+        {
+          "name": "Forensic Psychiatry & Psychology",
+          "description": "Mental health evaluations, capacity, and forensic behavioral opinions."
+        },
+        {
+          "name": "Biomechanics",
+          "description": "Injury mechanisms, force analysis, and human-motion related claims."
+        },
+        {
+          "name": "Neurology & Orthopedics",
+          "description": "Specialist medical testimony for injury, trauma, and treatment disputes."
+        },
+        {
+          "name": "Pathology & Toxicology",
+          "description": "Cause of injury or death, laboratory findings, and medical causation."
+        },
+        {
+          "name": "Forensic Science",
+          "description": "Evidence analysis, laboratory methods, and scientific interpretation."
+        }
+      ]
+    },
+    {
+      "id": "accident-safety",
+      "title": "Accident & Safety",
+      "description": "Reconstruction and safety experts who clarify how incidents occurred.",
+      "disciplines": [
+        {
+          "name": "Accident Reconstruction",
+          "description": "Vehicle, pedestrian, and workplace accident sequence analysis."
+        },
+        {
+          "name": "Premises Liability",
+          "description": "Property conditions, maintenance standards, and slip/trip/fall claims."
+        },
+        {
+          "name": "Product Liability",
+          "description": "Design defects, warnings, manufacturing issues, and product safety."
+        },
+        {
+          "name": "Fire Cause & Origin",
+          "description": "Fire investigation, ignition sources, and spread analysis."
+        },
+        {
+          "name": "OSHA & Workplace Safety",
+          "description": "Safety standards, compliance, and industrial accident evaluation."
+        },
+        {
+          "name": "Automotive & Traffic",
+          "description": "Vehicle systems, traffic engineering, and roadway-related disputes."
+        }
+      ]
+    },
+    {
+      "id": "additional",
+      "title": "Additional Disciplines",
+      "description": "Specialized fields beyond our core categories — if you have the case, we have the expert.",
+      "disciplines": [
+        {
+          "name": "Real Estate",
+          "description": "Appraisal, brokerage standards, and property-related disputes."
+        },
+        {
+          "name": "Document & Handwriting Examination",
+          "description": "Authenticity, forgery, and questioned document analysis."
+        },
+        {
+          "name": "Computer Technology",
+          "description": "Software, systems, digital evidence, and technology disputes."
+        },
+        {
+          "name": "Police & Security",
+          "description": "Use of force, security practices, and law enforcement standards."
+        },
+        {
+          "name": "Aviation & Maritime",
+          "description": "Aircraft, vessels, and transportation industry expert opinions."
+        },
+        {
+          "name": "Hotel, Food & Restaurant",
+          "description": "Hospitality operations, food safety, and service industry standards."
+        }
+      ]
+    }
+  ]
+}

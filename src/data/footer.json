@@ -1,0 +1,53 @@
+{
+  "company": "ForensisGroup",
+  "tagline": "Nothing But The Truth®",
+  "description": "Expert witness services connecting litigation experts with legal teams since 1991.",
+  "address": {
+    "street": "251 S. Lake Ave. Suite 835",
+    "city": "Pasadena",
+    "state": "CA",
+    "zip": "91101"
+  },
+  "contact": {
+    "phone": "800-555-5422",
+    "phoneHref": "tel:+18005555422",
+    "email": "experts@forensisgroup.com",
+    "emailHref": "mailto:experts@forensisgroup.com"
+  },
+  "columns": [
+    {
+      "title": "Find an Expert",
+      "links": [
+        { "label": "Request an Expert", "href": "/" },
+        { "label": "How It Works", "href": "/#how-it-works" },
+        { "label": "Giving Back", "href": "/" },
+        { "label": "Browse Disciplines", "href": "/disciplines" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "label": "News & Articles", "href": "/news" },
+        { "label": "FAQ", "href": "/faq" },
+        { "label": "Letters from the CEO", "href": "/" },
+        { "label": "Become an Expert", "href": "/" }
+      ]
+    },
+    {
+      "title": "About Us",
+      "links": [
+        { "label": "Our Story", "href": "/" },
+        { "label": "Awards & Recognition", "href": "/" },
+        { "label": "Contact", "href": "/" },
+        { "label": "Use & Disclaimers", "href": "/" }
+      ]
+    }
+  ],
+  "social": [
+    { "label": "Facebook", "href": "https://www.facebook.com/" },
+    { "label": "Instagram", "href": "https://www.instagram.com/" },
+    { "label": "YouTube", "href": "https://www.youtube.com/" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/" }
+  ],
+  "copyright": "© 2026 ForensisGroup. All rights reserved."
+}
