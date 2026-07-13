@@ -12,7 +12,7 @@ export async function proxy(request: NextRequest) {
   const referer = request.headers.get("referer") ?? "";
   let fromBlog = false;
   try {
-    fromBlog = new URL(referer).pathname.startsWith("/forensis-expert-witness");
+    fromBlog = new URL(referer).pathname.startsWith("/forensis-expert-witness") || new URL(referer).pathname.startsWith("/resources") || new URL(referer).pathname.startsWith("/about-us") || new URL(referer).pathname.startsWith("/blog") || new URL(referer).pathname.startsWith("/news-and-media") || new URL(referer).pathname.startsWith("/csr");
   } catch {
     fromBlog = false;
   }
