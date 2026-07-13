@@ -4,10 +4,12 @@ import { fileURLToPath } from "url";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
-// Proxy /forensis-expert-witness to BLOG_ORIGIN (default: local forensis-fe).
-// Production: BLOG_ORIGIN=https://www.forensisgroup.com
-const blogOrigin = "https://www.forensisgroup.com";
-  //process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
+// Proxy section routes to QBurst (or BLOG_ORIGIN).
+// qburst.com indexes require a trailing slash (/blog/ → 200, /blog → 302 → /blog/).
+// Next.js strips trailing slashes (/blog/ → 308 → /blog), so the rewrite must be:
+//   source: "/blog"  →  destination: ".../blog/"
+// or you get an infinite redirect loop ("This page isn't working").
+const blogOrigin = "https://www.qburst.com";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -18,69 +20,40 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.forensisgroup.com",
-        pathname: "/images/**",
+        hostname: "www.qburst.com",
+        pathname: "/**",
       },
     ],
   },
   async rewrites() {
     return {
       fallback: [
-      {
-        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
-        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
-        source: "/forensis-expert-witness",
-        destination: `${blogOrigin}/forensis-expert-witness`,
-      },
-      {
-        source: "/forensis-expert-witness/:path*",
-        destination: `${blogOrigin}/forensis-expert-witness/:path*`,
-      },
-      {
-        source: "/resources/:path*",
-        destination: `${blogOrigin}/resources/:path*`,
-      },
-      {
-        source: "/resources/:path*/:path*",
-        destination: `${blogOrigin}/resources/:path*/:path*`,
-      },
-    
-      {
-        source: "/about-us/:path*",
-        destination: `${blogOrigin}/about-us/:path*`,
-      },
-      {
-        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
-        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
-        source: "/blog",
-        destination: `${blogOrigin}/blog`,
-      },
-      {
-        source: "/blog/:path*",
-        destination: `${blogOrigin}/blog/:path*`,
-      },
-      {
-        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
-        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
-        source: "/news-and-media",
-        destination: `${blogOrigin}/news-and-media`,
-      },
-      {
-        source: "/news-and-media/:path*",
-        destination: `${blogOrigin}/news-and-media/:path*`,
-      },
-       {
-        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
-        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
-        source: "/csr",
-        destination: `${blogOrigin}/csr`,
-      },
-      {
-        source: "/csr/:path*",
-        destination: `${blogOrigin}/csr/:path*`,
-      }
-    ]
-  }
+        {
+          source: "/blog",
+          destination: `${blogOrigin}/blog/`,
+        },
+        {
+          source: "/blog/:path*",
+          destination: `${blogOrigin}/blog/:path*`,
+        },
+        {
+          source: "/news-and-media",
+          destination: `${blogOrigin}/news-and-media/`,
+        },
+        {
+          source: "/news-and-media/:path*",
+          destination: `${blogOrigin}/news-and-media/:path*`,
+        },
+        {
+          source: "/csr",
+          destination: `${blogOrigin}/csr/`,
+        },
+        {
+          source: "/csr/:path*",
+          destination: `${blogOrigin}/csr/:path*`,
+        },
+      ],
+    };
   },
 };
 

@@ -1,23 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const blogOrigin = "https://www.forensisgroup.com";
- // process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
+const blogOrigin = "https://www.qburst.com";
+
+const proxiedPrefixes = ["/blog", "/csr", "/news-and-media"];
 
 /**
- * Blog HTML is proxied via rewrites, but its /_next/* assets still point at
- * this origin. When the request comes from a /blog page, fetch those assets
- * from the QBurst app so CSS/JS/fonts resolve.
+ * Proxied HTML is served via rewrites, but its /_next/* assets still point at
+ * this origin. When the request comes from a proxied page, fetch those assets
+ * from QBurst so CSS/JS/fonts resolve.
  */
 export async function proxy(request: NextRequest) {
   const referer = request.headers.get("referer") ?? "";
-  let fromBlog = false;
+  let fromProxied = false;
   try {
-    fromBlog = new URL(referer).pathname.startsWith("/forensis-expert-witness") || new URL(referer).pathname.startsWith("/resources") || new URL(referer).pathname.startsWith("/about-us") || new URL(referer).pathname.startsWith("/blog") || new URL(referer).pathname.startsWith("/news-and-media") || new URL(referer).pathname.startsWith("/csr");
+    const pathname = new URL(referer).pathname;
+    fromProxied = proxiedPrefixes.some(
+      (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+    );
   } catch {
-    fromBlog = false;
+    fromProxied = false;
   }
 
-  if (!fromBlog) {
+  if (!fromProxied) {
     return NextResponse.next();
   }
 
