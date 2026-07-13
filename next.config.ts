@@ -24,7 +24,8 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
-    return [
+    return {
+      fallback: [
       {
         // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
         // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
@@ -35,7 +36,8 @@ const nextConfig: NextConfig = {
         source: "/forensis-expert-witness/:path*",
         destination: `${blogOrigin}/forensis-expert-witness/:path*`,
       },
-    ];
+    ]
+  }
   },
 };
 
