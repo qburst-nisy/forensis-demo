@@ -6,8 +6,8 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 // Proxy /forensis-expert-witness to BLOG_ORIGIN (default: local forensis-fe).
 // Production: BLOG_ORIGIN=https://www.forensisgroup.com
-const blogOrigin =
-  process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
+const blogOrigin = "https://www.forensisgroup.com";
+  //process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
 
 const nextConfig: NextConfig = {
   turbopack: {

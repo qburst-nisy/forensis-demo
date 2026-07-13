@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const blogOrigin =
-  process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
+const blogOrigin = "https://www.forensisgroup.com";
+ // process.env.BLOG_ORIGIN?.replace(/\/$/, "") || "http://localhost:3001";
 
 /**
  * Blog HTML is proxied via rewrites, but its /_next/* assets still point at
