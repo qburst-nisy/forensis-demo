@@ -24,8 +24,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
-    return {
-      fallback: [
+    return [
       {
         // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
         // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
@@ -36,8 +35,50 @@ const nextConfig: NextConfig = {
         source: "/forensis-expert-witness/:path*",
         destination: `${blogOrigin}/forensis-expert-witness/:path*`,
       },
+      {
+        source: "/resources/:path*",
+        destination: `${blogOrigin}/resources/:path*`,
+      },
+      {
+        source: "/resources/:path*/:path*",
+        destination: `${blogOrigin}/resources/:path*/:path*`,
+      },
+    
+      {
+        source: "/about-us/:path*",
+        destination: `${blogOrigin}/about-us/:path*`,
+      },
+      {
+        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
+        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
+        source: "/blog",
+        destination: `${blogOrigin}/blog`,
+      },
+      {
+        source: "/blog/:path*",
+        destination: `${blogOrigin}/blog/:path*`,
+      },
+      {
+        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
+        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
+        source: "/news-and-media",
+        destination: `${blogOrigin}/news-and-media`,
+      },
+      {
+        source: "/news-and-media/:path*",
+        destination: `${blogOrigin}/news-and-media/:path*`,
+      },
+       {
+        // forensisgroup.com uses trailingSlash: false — /path/ 308s to /path.
+        // Proxy without a trailing slash so the rewrite gets a 200, not a loop.
+        source: "/csr",
+        destination: `${blogOrigin}/csr`,
+      },
+      {
+        source: "/csr/:path*",
+        destination: `${blogOrigin}/csr/:path*`,
+      }
     ]
-  }
   },
 };
 
