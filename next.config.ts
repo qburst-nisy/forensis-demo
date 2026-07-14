@@ -4,12 +4,11 @@ import { fileURLToPath } from "url";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
-// Proxy section routes to QBurst (or BLOG_ORIGIN).
-// qburst.com indexes require a trailing slash (/blog/ → 200, /blog → 302 → /blog/).
-// Next.js strips trailing slashes (/blog/ → 308 → /blog), so the rewrite must be:
-//   source: "/blog"  →  destination: ".../blog/"
-// or you get an infinite redirect loop ("This page isn't working").
-const blogOrigin = "https://www.qburst.com";
+// Proxy section routes to QBurst.
+// qburst.com is trailing-slash based: /path → 302 → /path/, while Next.js does
+// the opposite (/path/ → 308 → /path). Always rewrite to the slashed upstream URL
+// so nested pages like /csr/policy and /blog/:slug don't loop.
+const blogOrigin = "https://www.forensisgroup.com";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -20,7 +19,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.qburst.com",
+        hostname: "www.forensisgroup.com",
         pathname: "/**",
       },
     ],
@@ -28,33 +27,29 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return {
       fallback: [
-        {
-          source: "/blog",
-          destination: `${blogOrigin}/blog/`,
-        },
-        {
-          source: "/blog/:path*",
-          destination: `${blogOrigin}/blog/:path*`,
-        },
-        {
-          source: "/news-and-media",
-          destination: `${blogOrigin}/news-and-media/`,
-        },
-        {
-          source: "/news-and-media/:path*",
-          destination: `${blogOrigin}/news-and-media/:path*`,
-        },
-        {
-          source: "/csr",
-          destination: `${blogOrigin}/csr/`,
-        },
-        {
-          source: "/csr/:path*",
-          destination: `${blogOrigin}/csr/:path*`,
-        },
+      {
+        source: "/forensis-expert-witness",
+        destination: `${blogOrigin}/forensis-expert-witness`,
+      },
+      {
+        source: "/forensis-expert-witness/:path*",
+        destination: `${blogOrigin}/forensis-expert-witness/:path*`,
+      },
+      {
+        source: "/resources/:path*",
+        destination: `${blogOrigin}/resources/:path*`,
+      },
+      {
+        source: "/resources/:path*/:path*",
+        destination: `${blogOrigin}/resources/:path*/:path*`,
+      },
+      {
+        source: "/about-us/:path*",
+        destination: `${blogOrigin}/about-us/:path*`,
+      }
       ],
     };
-  },
+  }
 };
 
 export default nextConfig;

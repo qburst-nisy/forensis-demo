@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const blogOrigin = "https://www.qburst.com";
+const blogOrigin = "https://www.forensisgroup.com";
 
-const proxiedPrefixes = ["/blog", "/csr", "/news-and-media"];
+const proxiedPrefixes = ["/forensis-expert-witness", "/resources", "/about-us"];
 
 /**
  * Proxied HTML is served via rewrites, but its /_next/* assets still point at
