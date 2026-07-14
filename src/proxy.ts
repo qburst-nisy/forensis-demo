@@ -43,6 +43,7 @@ export async function proxy(request: NextRequest) {
   headers.delete("content-encoding");
   headers.delete("transfer-encoding");
   headers.delete("connection");
+  headers.delete("content-length");
 
   return new NextResponse(upstreamRes.body, {
     status: upstreamRes.status,
