@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "www.forensisgroup.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        pathname: "/**",
+      },
     ],
   },
   async rewrites() {
